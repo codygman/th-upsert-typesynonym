@@ -8,4 +8,4 @@ import Language.Haskell.TH
 import Language.Haskell.TH.Syntax
 
 createTypSynA :: DecsQ
-createTypSynA = [d| type A = $([t| String |]) |]
+createTypSynA = [d| type A = String |]
