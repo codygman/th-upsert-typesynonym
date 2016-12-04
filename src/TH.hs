@@ -8,7 +8,5 @@ import Language.Haskell.TH
 import Language.Haskell.TH.Syntax
 import Debug.Trace
 
-createTypSyn :: Name -> DecsQ
-createTypSyn n = do
-  let name = mkName n
-  [d| type $name = String |]
+createTypSyn :: String -> DecsQ
+createTypSyn n = (:[]) <$> tySynD (mkName n) [] [t|String|]

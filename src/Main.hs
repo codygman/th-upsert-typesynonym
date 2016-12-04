@@ -4,6 +4,8 @@ module Main where
 import TH
 
 createTypSyn "A"
+createTypSyn "B"
+createTypSyn "C"
 -- second invocation should do nothing
 -- createTypSynA
 
