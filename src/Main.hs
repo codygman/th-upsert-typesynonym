@@ -5,7 +5,7 @@ import TH
 
 createTypSynA
 -- second invocation should do nothing
--- createTypSynA
+createTypSynA
 
 
 main :: IO ()

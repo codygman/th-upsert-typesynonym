@@ -8,4 +8,8 @@ import Language.Haskell.TH
 import Language.Haskell.TH.Syntax
 
 createTypSynA :: DecsQ
-createTypSynA = [d| type A = String |]
+createTypSynA = do
+  nm <- (lookupValueName "A")
+  case nm of
+    Just _ -> error "test"
+    Nothing -> [d| type A = String |]
