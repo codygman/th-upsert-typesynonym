@@ -3,9 +3,9 @@ module Main where
 
 import TH
 
-createTypSynA
+createTypSyn "A"
 -- second invocation should do nothing
-createTypSynA
+-- createTypSynA
 
 
 main :: IO ()

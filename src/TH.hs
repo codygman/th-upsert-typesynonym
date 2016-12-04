@@ -6,10 +6,8 @@ module TH where
 
 import Language.Haskell.TH
 import Language.Haskell.TH.Syntax
+import Debug.Trace
 
-createTypSynA :: DecsQ
-createTypSynA = do
-  nm <- (lookupValueName "A")
-  case nm of
-    Just _ -> error "test"
-    Nothing -> [d| type A = String |]
+createTypSyn :: Name -> DecsQ
+createTypSyn n = do
+  [d| type $(n) = String |]
