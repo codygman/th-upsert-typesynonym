@@ -10,4 +10,4 @@ import Debug.Trace
 
 createTypSyn :: Name -> DecsQ
 createTypSyn n = do
-  [d| type $(n) = String |]
+  [d| type $n = String |]
