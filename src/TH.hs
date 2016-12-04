@@ -9,4 +9,8 @@ import Language.Haskell.TH.Syntax
 import Debug.Trace
 
 createTypSyn :: String -> DecsQ
-createTypSyn n = (:[]) <$> tySynD (mkName n) [] [t|String|]
+createTypSyn n = do
+  mNm <- lookupTypeName n
+  case mNm of
+    Just _ -> pure []
+    Nothing -> (:[]) <$> tySynD (mkName n) [] [t|String|]
