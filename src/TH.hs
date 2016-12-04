@@ -10,4 +10,5 @@ import Debug.Trace
 
 createTypSyn :: Name -> DecsQ
 createTypSyn n = do
-  [d| type $n = String |]
+  let name = mkName n
+  [d| type $name = String |]
